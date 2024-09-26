@@ -1,10 +1,4 @@
-% Uncomment the following line if the paper is going to be published in journal
-
-%\documentclass[journal, twoside]{IEEEtran}
-
-% Uncomment the following line if the paper is going to be published on the conference
-
-\documentclass[conference]{IEEEtran}
+\documentclass{ifacconf}
 
 % Warning: different journals/conferences migh have different requirements for the papers this is just a default template
 
@@ -12,7 +6,7 @@
 
 % Importing packages -  beginning
 
-\IEEEoverridecommandlockouts
+
 \usepackage{cite}
 \usepackage{amssymb,amsfonts}
 \usepackage{amsmath}
@@ -38,9 +32,9 @@
 \usepackage[withpage, nohyperlinks]{acronym}
 
 \usepackage[spaces,hyphens]{xurl}
-\usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{caption}
 \usepackage{glossaries-extra}
+\usepackage{natbib} 
 
 % Importing packages - end
 
@@ -50,48 +44,24 @@
 \begin{document}
 	\urlstyle{tt}
 	
-	\title{Template for IEEE Papers}
+	\begin{frontmatter}
 	
-	\ifCLASSOPTIONconference
-		% You must choose one of three types of author names format when using conference paper
-		\input{./headers/authors_conference.tex}
-	\else
-		\input{./headers/authors_journal.tex}
-	\fi	
+		% Paper titles should be written in uppercase and lowercase letters, not all uppercase.
+		\title{Template for IFAC Papers \thanksref{footnoteinfo}}
+		
+		\thanks[footnoteinfo]{Sponsor and financial support acknowledgment
+			goes here.}
 	
-	\ifCLASSOPTIONjournal
-		\markboth
-		{Journal of Quantum Telecommunications, Vol. 1, No. 1, January 2100}
-		% The second argument is used as a page heading only for the odd number pages after the title page for two sided (duplex) journal papers,
-		{\MakeLowercase{Template for IEEE Papers, University of Žilina, Faculty of Management Science and Informatics}}
-	\fi
+		\input{./headers/authors.tex}
 	
+		\input{./headers/abstract_keywords.tex}
 	
-	\ifCLASSOPTIONjournal
-		\IEEEpubid{0000--0000/00\$00.00~\copyright~2024 IEEE}
-		% Remember, if you use \IEEEpubid you must call \IEEEpubidadjcol in the second and first
-		% column for its text to clear the IEEEpubid mark.
-	\fi
-	
-	% In journal mode command causes error
-	%\IEEEspecialpapernotice{(Template paper)}
-
-	\maketitle	
-
-	
-	\input{./headers/abstract_keywords.tex}
+	\end{frontmatter}
 	
 	%Glossary
-	\input{./headers/acronyms.tex}
+	%\input{./headers/acronyms.tex}
 	
-
-	% When using journal as document class do the following
-	% Remember, if you use \IEEEpubid you must call \IEEEpubidadjcol in the second and first
-	% column for its text to clear the IEEEpubid mark.
-	\IEEEpubidadjcol
-	
-	
-	
+		
 	\input{./sections/introduction.tex}
 	
 	% Add here the sections of your conference paper - beginning
@@ -106,11 +76,12 @@
 	
 	
 	
-	\input{./headers/declaration_of_competing_interests.tex}
+	%\input{./headers/declaration_of_competing_interests.tex}
 	
-	\input{./headers/data_availability.tex}
+	%\input{./headers/data_availability.tex}
 	
-	\input{./headers/acknowledgments.tex}
+	
+	%\input{./headers/acknowledgments.tex}
 	
 	
 	
@@ -119,14 +90,13 @@
 	
 	% If you are using Overleaf then it will automatically sort the references for you.
 	\nocite{*}
-	\bibliographystyle{IEEEtran}
-	\bibliography{IEEEabrv,./bibliography/figure_sources.bib,./bibliography/text_sources.bib}
+	%\bibliography{./ifac_conf_file/ifacconf.bst}
+	
+	%\bibliographystyle{ifac}
+	%\bibliographystyle{}
+	\bibliography{./bibliography/figure_sources.bib,./bibliography/text_sources.bib}
 	
 	
-	
-	\ifCLASSOPTIONjournal
-		\input{./headers/biography.tex}
-	\fi
 	
 	
 	
