@@ -1,0 +1,200 @@
+% Uncomment the following line if the paper is going to be published in journal
+
+%\documentclass[journal, twoside]{IEEEtran}
+
+% Uncomment the following line if the paper is going to be published on the conference
+
+\documentclass[conference]{IEEEtran}
+
+% Warning: different journals/conferences migh have different requirements for the papers this is just a default template
+
+%*********************************************************************************************************************************
+
+% Importing packages -  beginning
+
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amssymb,amsfonts}
+\usepackage{amsmath}
+\interdisplaylinepenalty=2500
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}	
+
+
+\makeatletter
+\def\endthebibliography{
+	\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}
+	\endlist
+}
+\makeatother
+
+\renewcommand{\encodingdefault}{OT1}
+\usepackage[utf8]{luainputenc}
+
+\usepackage[withpage, nohyperlinks]{acronym}
+
+\usepackage[spaces,hyphens]{xurl}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage{caption}
+\usepackage{glossaries-extra}
+
+% Importing packages - end
+
+%*********************************************************************************************************************************
+
+
+\begin{document}
+	\urlstyle{tt}
+	
+	\title{Template for IEEE Papers}
+	
+	\ifCLASSOPTIONconference
+		% You must choose one of three types of author names format when using conference paper
+		\input{./headers/authors_conference.tex}
+	\else
+		\input{./headers/authors_journal.tex}
+	\fi	
+	
+	\ifCLASSOPTIONjournal
+		\markboth
+		{Journal of Quantum Telecommunications, Vol. 1, No. 1, January 2100}
+		% The second argument is used as a page heading only for the odd number pages after the title page for two sided (duplex) journal papers,
+		{\MakeLowercase{Template for IEEE Papers, University of Žilina, Faculty of Management Science and Informatics}}
+	\fi
+	
+	
+	\ifCLASSOPTIONjournal
+		\IEEEpubid{0000--0000/00\$00.00~\copyright~2024 IEEE}
+		% Remember, if you use \IEEEpubid you must call \IEEEpubidadjcol in the second and first
+		% column for its text to clear the IEEEpubid mark.
+	\fi
+	
+	% In journal mode command causes error
+	%\IEEEspecialpapernotice{(Template paper)}
+
+	\maketitle	
+
+	
+	\input{./headers/abstract_keywords.tex}
+	
+	%Glossary
+	\input{./headers/acronyms.tex}
+	
+
+	% When using journal as document class do the following
+	% Remember, if you use \IEEEpubid you must call \IEEEpubidadjcol in the second and first
+	% column for its text to clear the IEEEpubid mark.
+	\IEEEpubidadjcol
+	
+	
+	
+	\input{./sections/introduction.tex}
+	
+	% Add here the sections of your conference paper - beginning
+	
+	\input{./sections/my_only_section.tex}
+	
+	
+	% Add here the sections of your conference paper - end
+	
+	
+	\input{./sections/conclusion.tex}
+	
+	
+	
+	\input{./headers/declaration_of_competing_interests.tex}
+	
+	\input{./headers/data_availability.tex}
+	
+	\input{./headers/acknowledgments.tex}
+	
+	
+	
+	% If you are using TexStudiu you have to choose Tools → Commands → Bibtex and then recompile to sort the references based on their order of citations in the document.
+	% You can also add shortcut for Bibtex to the upper menu. Based on pictures from the folder bibliography_recompilation_guide. 
+	
+	% If you are using Overleaf then it will automatically sort the references for you.
+	\nocite{*}
+	\bibliographystyle{IEEEtran}
+	\bibliography{IEEEabrv,./bibliography/figure_sources.bib,./bibliography/text_sources.bib}
+	
+	
+	
+	\ifCLASSOPTIONjournal
+		\input{./headers/biography.tex}
+	\fi
+	
+	
+	
+\end{document}
+
+\begin{comment}
+	
+% If you don't know what to put to certain fields don't erase them just leave them empty they will be automatically ignored when the references are generated.
+
+% Template for articles in biblography
+
+@article{,
+	title        = {},
+	author       = {},
+	year         = {},
+	month        = {},
+	journal      = {},
+	booktitle    = {},
+	volume       = {},
+	number       = {},
+	pages        = {},
+	doi          = {},
+	issn         = {},
+	url          = {},
+}
+
+% Example usage 
+
+@article{vibrations,
+	title        = {A study of low level vibrations as a power source for wireless sensor nodes},
+	author       = {Shad Roundy and Paul K. Wright and Jan Rabaey},
+	year         = {2003},
+	month        = {July},
+	journal      = {Computer Communications},
+	booktitle    = {},
+	volume       = {26},
+	number       = {11},
+	pages        = {1131--1144},
+	doi          = {https://doi.org/10.1016/S0140-3664(02)00248-7},
+	issn         = {0140-3664},
+	url          = {https://www.sciencedirect.com/science/article/pii/S0140366402002487},
+}
+
+% Template for Figures in biblography
+
+% Template for Figures in biblography
+
+@online{,
+	title        = {},
+	author       = {},
+	year         = {},
+	month		 = {},
+	publisher 	 = {},
+	urldate   	 = {},
+	url          = {},
+}
+
+
+% Example usage
+
+@online{vibrations,
+	title        = {Introduction to Vibration Energy Harvesting},
+	author       = {Francesco Orfei},
+	year         = {2019},
+	month		 = {June},
+	publisher 	 = {allaboutcircuits},
+	urldate   	 = {10.9.2023},
+	url          = {https://www.allaboutcircuits.com/technical-articles/introduction-to-vibration-energy-harvesting/},
+}
+
+\end{comment}
