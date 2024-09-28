@@ -7,7 +7,7 @@
 % Importing packages -  beginning
 
 
-\usepackage{cite}
+%\usepackage{cite}
 \usepackage{amssymb,amsfonts}
 \usepackage{amsmath}
 \interdisplaylinepenalty=2500
@@ -28,15 +28,24 @@
 
 \renewcommand{\encodingdefault}{OT1}
 \usepackage[utf8]{luainputenc}
-
 \usepackage[withpage, nohyperlinks]{acronym}
-
 \usepackage[spaces,hyphens]{xurl}
 \usepackage{caption}
 \usepackage{glossaries-extra}
-\usepackage{natbib} 
+%\usepackage{natbib} 
+\usepackage[round,sort,comma,numbers]{natbib}
+
 
 % Importing packages - end
+
+% Solving problem with hyperref package when used with IFAC template - beginning
+
+% At first you have to compile the finished document with the package hyperlink commented out and then
+% uncomment the package import otherwise the file might not be compiled properly
+
+%\usepackage[colorlinks,allcolors=blue]{hyperref}
+
+% Solving problem with hyperref package when used with IFAC template - end
 
 %*********************************************************************************************************************************
 
@@ -59,7 +68,7 @@
 	\end{frontmatter}
 	
 	%Glossary
-	%\input{./headers/acronyms.tex}
+	\input{./headers/acronyms.tex}
 	
 		
 	\input{./sections/introduction.tex}
@@ -76,12 +85,12 @@
 	
 	
 	
-	%\input{./headers/declaration_of_competing_interests.tex}
+	\input{./headers/declaration_of_competing_interests.tex}
 	
-	%\input{./headers/data_availability.tex}
+	\input{./headers/data_availability.tex}
 	
 	
-	%\input{./headers/acknowledgments.tex}
+	\input{./headers/acknowledgments.tex}
 	
 	
 	
@@ -90,11 +99,8 @@
 	
 	% If you are using Overleaf then it will automatically sort the references for you.
 	\nocite{*}
-	%\bibliography{./ifac_conf_file/ifacconf.bst}
-	
-	%\bibliographystyle{ifac}
-	%\bibliographystyle{}
 	\bibliography{./bibliography/figure_sources.bib,./bibliography/text_sources.bib}
+	%\bibliography{./bibliography/refs-test-delete.bib}
 	
 	
 	
